@@ -16,8 +16,8 @@ FILES = \
 CFLAGS = \
 	-O3 \
 	-Wall \
-	-Werror \
 	-Wall \
+	-Werror \
 	-Wno-deprecated \
 	-Wno-parentheses \
 	-Wno-format
@@ -38,10 +38,9 @@ WASM_OPTIONS = \
 	-s ABORTING_MALLOC=1 \
 	-s NO_EXIT_RUNTIME=1 \
 	-s NO_FILESYSTEM=1 \
-	-s DISABLE_EXCEPTION_CATCHING=2 \
+	-s DISABLE_EXCEPTION_CATCHING=1 \
 	-s BINARYEN=1 \
-	-s EXPORTED_RUNTIME_METHODS=[\'UTF8ToString\'] \
-	-s BINARYEN_TRAP_MODE=\'allow\'
+	-s EXPORTED_RUNTIME_METHODS=[\'UTF8ToString\']
 
 # C++ => .asm.js options
 ASMJS_OPTIONS = \
@@ -59,7 +58,7 @@ ASMJS_OPTIONS = \
 	-s ABORTING_MALLOC=1 \
 	-s NO_EXIT_RUNTIME=1 \
 	-s NO_FILESYSTEM=1 \
-	-s DISABLE_EXCEPTION_CATCHING=2 \
+	-s DISABLE_EXCEPTION_CATCHING=1 \
 	-s EXPORTED_RUNTIME_METHODS=[\'UTF8ToString\'] \
 	-s WASM=0
 
@@ -98,7 +97,7 @@ $(BC): $(OBJS) $(FILES)
 		$(INCLUDES) \
 		$(OBJS) \
 		$(FILES) \
-		-o $(BC)
+		-o $(BC) -r
 
 dist/wasm: $(BC)
 	npx mkdirp dist/wasm
