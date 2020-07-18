@@ -10,7 +10,19 @@
   <body>
     <div>
       <svg id="root" xmlns="http://www.w3.org/2000/svg" width="600px" class="sudoku" viewBox="0 0 1000 1000">
+        <g id="playground">
 
+        </g>
+        <g id="background">
+          <g id="blocks"></g>
+          <path class="line"
+                d="M 50 50 h 900 M 50 150 h 900 M 50 250 h 900 M 50 350 h 900 M 50 450 h 900 M 50 550 h 900 M 50 650 h 900 M 50 750 h 900 M 50 850 h 900 M 50 950 h 900">
+          </path>
+          <path class="line"
+                d="M 50 50 v 900 M 150 50 v 900 M 250 50 v 900 M 350 50 v 900 M 450 50 v 900 M 550 50 v 900 M 650 50 v 900 M 750 50 v 900 M 850 50 v 900 M 950 50 v 900">
+          </path>
+          <rect x="50" y="50" height="900" width="900" class="line-thick" fill="transparent"></rect>
+        </g>
       </svg>
     </div>
     <script src="./src/index.js"></script>

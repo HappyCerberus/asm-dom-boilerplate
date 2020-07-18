@@ -14,5 +14,20 @@ html, body {
   height: 100%;
 }
 
+.line {
+  stroke: gray;
+  stroke-width: 1;
+}
+
+.line-thick {
+  stroke: black;
+  stroke-width: 5;
+}
+
 #sudoku {
+}
+
+#blocks {
+  width: 1000px;
+  height: 1000px;
 }
